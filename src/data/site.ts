@@ -7,7 +7,7 @@ export const navItems = [
   { href: '/academic', label: '學術成果' },
   { href: '/news', label: '最新消息' },
   { href: '/life', label: '實驗室生活' },
-  { href: '/join', label: '加入我們' },
+  // { href: '/join', label: '加入我們' },
   { href: '/contact', label: '聯絡 / 合作' },
 ];
 

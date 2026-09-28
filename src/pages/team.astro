@@ -1,19 +1,383 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import SectionHead from '../components/SectionHead.astro';
 import CtaBand from '../components/CtaBand.astro';
+
+const members = [
+    {
+        name: '謝智全',
+        degree: '博士生',
+        year: '博三',
+        degreeEn: 'Ph.D. Student',
+        avatar: '/images/team/avatar/chien-chien-yen.jpg',
+        topicImage: '/images/team/topics/chien-chien-yen-topic.jpg',
+        research: '',
+        researchEn: '',
+    },
+    {
+        name: '池綠涔',
+        degree: '博士生',
+        year: '博三',
+        degreeEn: 'Ph.D. Student',
+        avatar: '/images/team/avatar/lu-tsen-chih.jpg',
+        topicImage: '/images/team/topics/lu-tsen-chih-topic.jpg',
+        research: '',
+        researchEn: '',
+    },
+    {
+        name: '簡千諺',
+        degree: '博士生',
+        year: '博二',
+        degreeEn: 'Ph.D. Student',
+        avatar: '/images/team/avatar/chien-chien-yen.jpg',
+        topicImage: '/images/team/topics/chien-chien-yen-topic.jpg',
+        research: '',
+        researchEn: '',
+    },    
+    {
+        name: '譚家昕',
+        degree: '碩士生',
+        year: '碩二',
+        degreeEn: "Master's Student",
+        avatar: '/images/team/avatar/chia-hsin-tan.jpg',
+        topicImage: '/images/team/topics/chia-hsin-tan-topic.jpg',
+        research: '',
+        researchEn: '',
+    },
+    {
+        name: '李函倩',
+        degree: '大學部',
+        year: '大二',
+        degreeEn: 'Undergraduate Student',
+        avatar: '/images/team/avatar/han-chien-li.jpg',
+        topicImage: '/images/team/topics/han-chien-li-topic.jpg',
+        research: '',
+        researchEn: '',
+    },
+    {
+        name: '宋宇曼',
+        degree: '大學部',
+        year: '大二',
+        degreeEn: 'Undergraduate Student',
+        avatar: '/images/team/avatar/yu-man-sung.jpg',
+        topicImage: '/images/team/topics/yu-man-sung-topic.jpg',
+        research:
+        '智慧睡眠衛生介入盒於高齡睡眠困擾者之可行性與行為改變潛力評估',
+        researchEn:
+        'Feasibility and Sleep-Related Behaviral Changes of a Smart Sleep Hygiene Box among Older Adults with Sleep Disturbance',
+    },
+    {
+        name: '洪傑倫',
+        degree: '大學部',
+        year: '大二',
+        degreeEn: 'Undergraduate Student',
+        avatar: '/images/team/avatar/chieh-lun-hung.jpg',
+        topicImage: '/images/team/topics/chieh-lun-hung-topic.jpg',
+        research:
+        '探討眼動參數與高齡長者認知功能的關係',
+        researchEn:
+        'Exploring the Association Between Eye-Movement Parameters and Cognitive Function Among Older Adults',
+    },
+];
+
+const groups = ['博士生', '碩士生', '大學部'];
 ---
-<BaseLayout title="團隊成員｜OSA Lab">
-  <PageHero title="團隊成員" description="跨領域師生共同投入智慧高齡、口腔與睡眠健康研究。" />
-  <section class="section"><div class="container">
-    <SectionHead kicker="People" title="指導教授" />
-    <div class="people-grid">
-      <article class="person glass-card"><div class="person-photo">👩🏻‍🏫</div><div class="person-body"><span class="role">指導教授</span><h3>陳嬿今 副教授</h3><p>研究領域：高齡護理、睡眠健康、智慧照護與健康促進。</p><a class="link" href="https://www.annieycc.com.tw/" target="_blank" rel="noopener">前往個人學術網站 ↗</a></div></article>
-      <article class="person glass-card"><div class="person-photo">👨🏻‍🏫</div><div class="person-body"><span class="role">研究合作 / 共同指導</span><h3>跨域合作教師</h3><p>依研究計畫與議題，與工程、資訊、醫療及臨床團隊共同合作。</p></div></article>
-    </div>
-    <SectionHead kicker="Members" title="研究人員與學生" description="網站上線時可直接替換姓名、研究題目與個人頁面。" />
-    <div class="people-grid">{['博士生','碩士生','大學生','研究助理','歷屆成員'].map((x,i) => <article class="person glass-card"><div class="person-photo">{['🎓','🧑🏻‍💻','📘','🔬','🧭'][i]}</div><div class="person-body"><span class="role">{x}</span><h3>{x}團隊</h3><p>參與 OSA Lab 研究、系統開發、受試者研究與學術成果產出。</p></div></article>)}</div>
-    <CtaBand />
-  </div></section>
+
+<BaseLayout title="團隊成員">
+    <PageHero
+        title="團隊成員"
+        desc="跨領域研究與臨床合作，共同投入智慧高齡、口腔與睡眠健康研究。"
+    />
+
+    <section class="section team-section">
+        <div class="container">
+
+        <div class="team-section-title">
+            <div>
+            <span class="kicker">Principal Investigator</span>
+            <h2>指導教授</h2>
+            </div>
+
+            <p>
+            以睡眠、高齡照護與口腔健康為核心，
+            推動跨領域智慧健康研究與臨床轉譯。
+            </p>
+        </div>
+
+
+        <!-- Professor Banner -->
+        <article class="professor-banner">
+
+            <!-- 左側照片 -->
+            <div class="professor-photo-wrap">
+            <div class="professor-photo">
+                <img
+                src="/images/team/yen-chin-chen.png"
+                alt="陳嬿今 副教授"
+                loading="eager"
+                />
+            </div>
+
+            <div class="photo-decoration photo-decoration-a"></div>
+            <div class="photo-decoration photo-decoration-b"></div>
+            </div>
+
+
+            <!-- 右側資料 -->
+            <div class="professor-content">
+
+            <div class="professor-heading">
+
+                <div>
+                <span class="professor-label">
+                    PRINCIPAL INVESTIGATOR
+                </span>
+
+                <h2>陳嬿今 <span>副教授</span></h2>
+
+                <p class="professor-name-en">
+                    Yen-Chin Chen, Ph.D.
+                </p>
+                </div>
+
+                <a
+                class="professor-website"
+                href="https://www.annieycc.com.tw/"
+                target="_blank"
+                rel="noopener"
+                >
+                個人學術網站
+                <span>↗</span>
+                </a>
+
+            </div>
+
+
+            <div class="professor-position">
+                <span class="position-icon">＋</span>
+
+                <div>
+                <strong>國立中山大學 醫學院 護理學系</strong>
+                <span>
+                    Department of Nursing, College of Medicine,
+                    National Sun Yat-sen University
+                </span>
+                </div>
+            </div>
+
+
+            <!-- 聯絡資訊 -->
+            <div class="professor-contact">
+
+                <a href="mailto:yenchin2427@mail.nsysu.edu.tw">
+                <span class="contact-label">EMAIL</span>
+                <strong>yenchin2427@mail.nsysu.edu.tw</strong>
+                </a>
+
+                <div>
+                <span class="contact-label">校內分機</span>
+                <strong>7374</strong>
+                </div>
+
+            </div>
+
+
+            <!-- 詳細資料 -->
+            <div class="professor-details">
+
+                <div class="professor-detail-block">
+                <span class="detail-index">01</span>
+
+                <div>
+                    <span class="detail-en">EDUCATION</span>
+                    <h3>學歷</h3>
+
+                    <p>
+                    國立成功大學 護理學系國際博士班 博士<br/>
+                    美國匹茲堡大學 電機所 訪問學者<br/>
+                    國立成功大學 護理學系 碩士<br/>
+                    </p>
+                </div>
+                </div>
+
+
+                <div class="professor-detail-block research-block">
+                <span class="detail-index">02</span>
+
+                <div>
+                    <span class="detail-en">RESEARCH INTERESTS</span>
+                    <h3>研究專長</h3>
+
+                    <div class="research-tags">
+                    <span>成人護理學</span>
+                    <span>愛滋病照護</span>
+                    <span>睡眠照護</span>
+                    <span>高齡照護</span>
+                    <span>口腔衰弱</span>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+            </div>
+        </article>
+
+        <section class="member-section">
+
+            <div class="member-section-heading">
+            <div>
+                <span class="kicker">Members</span>
+                <h2>研究團隊</h2>
+            </div>
+
+            <p>
+                OSA Lab 由博士生、碩士生與大學部共同參與研究，
+                發展睡眠、高齡健康、智慧照護與跨領域研究。
+            </p>
+            </div>
+
+
+            {
+            groups.map((group) => {
+                const groupMembers = members.filter(
+                (member) => member.degree === group
+                );
+
+                if (groupMembers.length === 0) return null;
+
+                return (
+                <section class="member-group">
+
+                    <div class="member-group-heading">
+
+                    <div class="member-group-title">
+                        <span class="member-group-line"></span>
+
+                        <div>
+                        <span class="member-group-en">
+                            {
+                            group === '博士生'
+                                ? 'Doctoral Students'
+                                : group === '碩士生'
+                                ? "Master's Students"
+                                : 'Undergraduate Students'
+                            }
+                        </span>
+
+                        <h3>{group}</h3>
+                        </div>
+                    </div>
+
+                    <span class="member-count">
+                        {String(groupMembers.length)} 人
+                    </span>
+
+                    </div>
+
+
+                    <div class="member-grid">
+
+                    {
+                        groupMembers.map((member) => (
+                            <article class="member-card">
+
+                            <!-- 研究題目圖片 -->
+                            <div class="member-topic-image">
+
+                                <img
+                                src={member.topicImage || '/images/team/topic_default.png'}
+                                alt={`${member.name}研究題目`}
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='/images/team/topic_default.png';"
+                                />
+
+                                <span class="member-degree-badge">
+                                    {member.year}
+                                </span>
+
+                            </div>
+
+
+                            <!-- 成員資訊 -->
+                            <div class="member-info">
+
+                                <!-- 小頭像 + 姓名 -->
+                                <div class="member-profile">
+
+                                <div class="member-avatar">
+                                    <img
+                                    src={member.avatar || '/images/team/num_img.ico'}
+                                    alt={`${member.name}頭像`}
+                                    loading="lazy"
+                                    onerror="this.onerror=null;this.src='/images/team/num_img.ico';"
+                                    />
+                                </div>
+
+
+                                <div class="member-identity">
+
+                                    <h3>{member.name}</h3>
+
+                                    <div class="member-degree-row">
+                                    <span>{member.degree}</span>
+                                    <span class="degree-dot">·</span>
+                                    <span>{member.year}</span>
+                                    </div>
+
+                                    <span class="member-degree-en">
+                                    {member.degreeEn}
+                                    </span>
+
+                                </div>
+
+                                </div>
+
+
+                                <!-- 研究主題 -->
+                                <div class="member-research">
+
+                                <span class="member-research-label">
+                                    RESEARCH TOPIC
+                                </span>
+
+                                {
+                                    member.research ? (
+                                    <>
+                                        <p class="member-research-cn">
+                                        {member.research}
+                                        </p>
+
+                                        <p class="member-research-en">
+                                        {member.researchEn}
+                                        </p>
+                                    </>
+                                    ) : (
+                                    <p class="member-research-empty">
+                                        研究主題更新中
+                                    </p>
+                                    )
+                                }
+
+                                </div>
+
+                            </div>
+
+                            </article>
+                        ))
+                    }
+
+                    </div>
+
+                </section>
+                );
+            })
+            }
+
+        </section>
+
+        <CtaBand />
+
+        </div>
+    </section>
 </BaseLayout>
