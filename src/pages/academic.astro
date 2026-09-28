@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+const pubs = [
+  ['期刊論文','智慧睡眠與 AI 健康評估研究','2026'],['研討會論文','多鏡頭 CPAP 配戴輔助系統','2026'],['研究計畫','高齡韌性多模態人工智慧研究','2026–2028'],['專利','非侵入式智慧面罩配戴評估方法','申請中'],['獲獎榮譽','SmartFit CPAP 智慧照護創新','2026']
+];
+---
+<BaseLayout title="學術成果｜OSA Lab">
+  <PageHero title="學術成果" description="彙整期刊、研討會、研究計畫、專利與獲獎紀錄。" />
+  <section class="section"><div class="container"><div class="academic-list">{pubs.map(x => <div class="academic-item glass-card"><div class="academic-type">{x[0]}</div><div><div class="academic-title">{x[1]}</div><p>可於資料檔中替換為完整作者、期刊 / 會議名稱、DOI 與連結。</p></div><div class="date">{x[2]}</div></div>)}</div><CtaBand /></div></section>
+</BaseLayout>

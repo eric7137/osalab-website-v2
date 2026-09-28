@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<BaseLayout title="團隊成員｜OSA Lab">
+  <PageHero title="團隊成員" description="跨領域師生共同投入智慧高齡、口腔與睡眠健康研究。" />
+  <section class="section"><div class="container">
+    <SectionHead kicker="People" title="指導教授" />
+    <div class="people-grid">
+      <article class="person glass-card"><div class="person-photo">👩🏻‍🏫</div><div class="person-body"><span class="role">指導教授</span><h3>陳嬿今 副教授</h3><p>研究領域：高齡護理、睡眠健康、智慧照護與健康促進。</p><a class="link" href="https://www.annieycc.com.tw/" target="_blank" rel="noopener">前往個人學術網站 ↗</a></div></article>
+      <article class="person glass-card"><div class="person-photo">👨🏻‍🏫</div><div class="person-body"><span class="role">研究合作 / 共同指導</span><h3>跨域合作教師</h3><p>依研究計畫與議題，與工程、資訊、醫療及臨床團隊共同合作。</p></div></article>
+    </div>
+    <SectionHead kicker="Members" title="研究人員與學生" description="網站上線時可直接替換姓名、研究題目與個人頁面。" />
+    <div class="people-grid">{['博士生','碩士生','大學生','研究助理','歷屆成員'].map((x,i) => <article class="person glass-card"><div class="person-photo">{['🎓','🧑🏻‍💻','📘','🔬','🧭'][i]}</div><div class="person-body"><span class="role">{x}</span><h3>{x}團隊</h3><p>參與 OSA Lab 研究、系統開發、受試者研究與學術成果產出。</p></div></article>)}</div>
+    <CtaBand />
+  </div></section>
+</BaseLayout>

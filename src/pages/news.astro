@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+const news = [
+  ['研究消息','OSA Lab 啟動智慧高齡口腔睡眠整合研究平台','2026.09.01','🧠'],['研討會','研究團隊發表多模態智慧健康研究成果','2026.08.20','🎤'],['獲獎資訊','SmartFit CPAP 參與 AI 創新應用競賽','2026.08.12','🏆'],['媒體報導','智慧睡眠照護技術從實驗室走向真實場域','2026.07.28','📰'],['活動公告','招募高齡健康與睡眠研究受試者','2026.07.10','📣'],['研究消息','高齡韌性多模態研究計畫啟動','2026.06.30','🌱']
+];
+---
+<BaseLayout title="最新消息｜OSA Lab">
+  <PageHero title="最新消息" description="研究消息、研討會、獲獎、媒體報導與活動公告。" />
+  <section class="section"><div class="container"><div class="news-grid">{news.map(x => <article class="news-card glass-card"><div class="news-visual">{x[3]}</div><div class="news-body"><span class="tag">{x[0]}</span><h3>{x[1]}</h3><span class="date">{x[2]}</span></div></article>)}</div></div></section>
+</BaseLayout>

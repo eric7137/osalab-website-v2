@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+<BaseLayout title="聯絡 / 合作｜OSA Lab">
+  <PageHero title="聯絡 / 合作" description="歡迎學術合作、臨床合作、產學合作與研究交流。" />
+  <section class="section"><div class="container contact-grid">
+    <div class="contact-card glass-panel"><span class="kicker">Contact</span><h2>一起創造更好的健康照護</h2><p>如果你有高齡、睡眠、口腔、AI、機器視覺、眼動或智慧醫療相關合作構想，歡迎與我們聯絡。</p><h3>合作方向</h3><div class="pill-list"><span class="pill">學術合作</span><span class="pill">臨床合作</span><span class="pill">產學合作</span><span class="pill">受試者研究</span></div><h3>聯絡資訊</h3><p>國立中山大學<br />高雄市鼓山區蓮海路 70 號</p><p>Email：lab@osalab.tw</p></div>
+    <form class="form-card glass-panel" id="contactForm"><div class="form-grid">
+      <div class="field"><label for="name">姓名</label><input id="name" required placeholder="您的姓名" /></div>
+      <div class="field"><label for="org">單位</label><input id="org" placeholder="學校 / 醫院 / 公司" /></div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="name@example.com" /></div>
+      <div class="field"><label for="type">合作類型</label><select id="type"><option>學術合作</option><option>臨床合作</option><option>產學合作</option><option>加入實驗室</option><option>其他</option></select></div>
+      <div class="field full"><label for="message">訊息</label><textarea id="message" required placeholder="請簡述您的需求或合作想法"></textarea></div>
+      <div class="field full"><button class="btn btn-primary" type="submit">送出合作需求 →</button></div>
+    </div></form>
+  </div></section>
+  <script>
+    document.getElementById('contactForm')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!(form instanceof HTMLFormElement)) return;
+      let msg = form.querySelector('.form-success');
+      if (!msg) {
+        msg = document.createElement('div');
+        msg.className = 'notice form-success';
+        form.appendChild(msg);
+      }
+      msg.textContent = '表單功能正常。這是前端展示版，正式上線後可串接 Flask / Email API 寄送。';
+      msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  </script>
+</BaseLayout>

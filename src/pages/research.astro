@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { researchDomains, researchDescriptions, researchItemDescriptions } from '../data/site';
+---
+<BaseLayout title="研究方向｜OSA Lab">
+  <PageHero title="研究方向" description="四大核心研究主軸，串接高齡健康需求與智慧醫療技術。" />
+  <section class="section"><div class="container">
+    {researchDomains.map(r => <section class="content-section" id={r.id}>
+      <div class="section-head"><div><span class="kicker">Research Domain</span><h2>{r.icon} {r.title}</h2></div><p>{researchDescriptions[r.id]}</p></div>
+      <div class="cards">{r.items.map((item, i) => <div class="card glass-card"><div class="card-icon">{['◌','⌁','✦','＋','◎'][i % 5]}</div><h3>{item}</h3><p>{researchItemDescriptions[item] || `建構 ${item} 的智慧健康量測、分析與應用流程。`}</p></div>)}</div>
+    </section>)}
+    <CtaBand />
+  </div></section>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+const {
+  title = 'OSA Lab｜智慧高齡口腔睡眠實驗室',
+  description = 'OSA Lab 智慧高齡口腔睡眠實驗室｜睡眠 × 高齡 × 口腔 × AI'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#eef8ff" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="ambient ambient-c"></div>
+    <Navbar />
+    <main tabindex="-1"><slot /></main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CtaBand from '../components/CtaBand.astro';
+const items = [['系統測試','🧪'],['研討會發表','🎓'],['跨國交流','🌏'],['團隊聚會','☕'],['實驗紀錄','📷']];
+---
+<BaseLayout title="實驗室生活｜OSA Lab">
+  <PageHero title="實驗室生活" description="活動花絮、團隊交流與研究相簿。" />
+  <section class="section"><div class="container">
+    <SectionHead kicker="Lab Life" title="一起研究，也一起成長" description="記錄每一次測試、發表與跨領域交流。" />
+    <div class="gallery-grid">{items.map(([title, icon]) => <div class="gallery-item glass-card"><div class="gallery-inner"><div class="gallery-icon">{icon}</div><b>{title}</b></div></div>)}</div>
+    <CtaBand />
+  </div></section>
+</BaseLayout>

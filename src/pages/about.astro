@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+const sections = [
+  ['intro','實驗室簡介'], ['mission','使命 Mission'], ['vision','願景 Vision'], ['idea','研究理念'], ['space','睡眠開放空間與設備']
+];
+---
+<BaseLayout title="關於實驗室｜OSA Lab">
+  <PageHero title="關於實驗室" description="認識 OSA Lab 的使命、願景、研究理念與睡眠開放空間及設備。" />
+  <section class="section"><div class="container layout">
+    <aside class="sidebar glass-panel">{sections.map(([id,title]) => <a class="side-link" href={`#${id}`}>{title}</a>)}</aside>
+    <div class="content">
+      <section class="content-section" id="intro"><h2>實驗室簡介</h2><p>OSA Lab（智慧高齡口腔睡眠實驗室）以「睡眠 × 高齡 × 口腔 × AI」為研究品牌核心，結合護理、醫療照護、人工智慧、電子工程、人機互動與資料分析，發展可落地於臨床與日常生活的智慧健康技術。</p></section>
+      <section class="content-section" id="mission"><h2>使命 Mission</h2><p>以跨領域科技提升高齡與睡眠健康照護品質，透過非侵入式量測、智慧分析與人本設計，降低健康風險被忽略的機會。</p><div class="notice glass-card">Better Sleep · Healthier Aging · Brighter Tomorrow</div></section>
+      <section class="content-section" id="vision"><h2>願景 Vision</h2><p>成為結合臨床需求與人工智慧創新的特色研究團隊，建立高齡健康、口腔健康與睡眠科技的整合型研究平台。</p></section>
+      <section class="content-section" id="idea"><h2>研究理念</h2><div class="feature-grid">
+        <div class="feature glass-card"><h4>需求導向</h4><p>從病人、照護者與臨床流程中的真實問題出發。</p></div>
+        <div class="feature glass-card"><h4>非侵入式</h4><p>優先使用影像、眼動、聲音與穿戴訊號，降低量測負擔。</p></div>
+        <div class="feature glass-card"><h4>可驗證</h4><p>重視資料品質、臨床指標、模型驗證與跨場域再現性。</p></div>
+        <div class="feature glass-card"><h4>可轉譯</h4><p>研究成果朝系統化、產品化與照護流程整合方向發展。</p></div>
+      </div></section>
+      <section class="content-section" id="space"><h2>睡眠開放空間與設備</h2><p>實驗室建置多鏡頭影像分析、臉部與眼動追蹤、AI 推論工作站、穿戴式量測與智慧健康系統測試環境，可支援原型開發、受試者測試與資料分析。</p><div class="pill-list"><span class="pill">多鏡頭影像系統</span><span class="pill">眼動追蹤</span><span class="pill">GPU AI 工作站</span><span class="pill">穿戴式感測</span><span class="pill">Web / AR 原型</span></div></section>
+      <CtaBand />
+    </div>
+  </div></section>
+</BaseLayout>

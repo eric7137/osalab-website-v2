@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<BaseLayout title="加入我們｜OSA Lab">
+  <PageHero title="加入我們" description="招募大學專題生、碩士生、博士生與研究助理，一起投入智慧健康研究。" />
+  <section class="section"><div class="container">
+    <SectionHead kicker="Join OSA Lab" title="你可以從這裡開始" />
+    <div class="cards">
+      <div class="card glass-card"><div class="card-icon">📘</div><h3>大學專題生</h3><p>適合對 AI、Web、Unity、影像處理、健康照護或跨域專題有興趣的學生。</p></div>
+      <div class="card glass-card"><div class="card-icon">🎓</div><h3>碩士班 / 博士班</h3><p>參與智慧睡眠、高齡韌性、口腔健康、眼動與多模態 AI 研究。</p></div>
+      <div class="card glass-card"><div class="card-icon">🔬</div><h3>研究助理</h3><p>協助研究執行、資料蒐集、系統建置、受試者測試與研究成果整理。</p></div>
+    </div>
+    <div class="content join-content"><h2>我們期待的特質</h2><div class="feature-grid">
+      <div class="feature glass-card"><h4>願意跨域</h4><p>不只會寫程式，也願意理解使用者與健康照護需求。</p></div>
+      <div class="feature glass-card"><h4>願意動手</h4><p>喜歡把想法做成能測試的系統、原型或研究流程。</p></div>
+      <div class="feature glass-card"><h4>重視研究品質</h4><p>願意把資料、實驗與驗證做紮實。</p></div>
+      <div class="feature glass-card"><h4>願意分享</h4><p>主動討論、合作與紀錄，讓團隊知識持續累積。</p></div>
+    </div></div>
+    <CtaBand />
+  </div></section>
+</BaseLayout>

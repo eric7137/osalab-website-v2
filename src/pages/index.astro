@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { researchDomains, projects } from '../data/site';
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow glass-chip">睡眠 × 高齡 × 口腔 × AI</span>
+        <h1>OSA Lab <span>智慧高齡口腔睡眠實驗室</span></h1>
+        <p>以人工智慧、機器視覺、眼動、非侵入式感測與多模態分析，打造更精準、更友善、更貼近日常照護的高齡、口腔與睡眠健康技術。</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/research">探索研究方向 →</a><a class="btn btn-ghost glass-card" href="/contact">合作洽談</a></div>
+        <div class="pill-list"><span class="pill">Better Sleep</span><span class="pill">Healthier Aging</span><span class="pill">Brighter Tomorrow</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="orb orb-main glass-panel">
+          <div><span class="kicker">Smart Health Intelligence</span><h2>從研究問題<br />走向臨床與生活場域</h2></div>
+          <div class="science-icons">
+            <div class="science-card glass-card"><i>☾</i><b>睡眠科技</b></div>
+            <div class="science-card glass-card"><i>🦷</i><b>口腔健康</b></div>
+            <div class="science-card glass-card"><i>🧠</i><b>智慧分析</b></div>
+            <div class="science-card glass-card"><i>🌿</i><b>高齡韌性</b></div>
+          </div>
+        </div>
+        <div class="orb orb-mini glass-panel"><div class="metric">4+</div><div class="metric-label">跨領域研究主軸</div></div>
+        <div class="orb orb-tag glass-panel">People · Research · Innovation · Impact</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft"><div class="container">
+    <SectionHead kicker="Research Focus" title="四大核心研究方向" description="以健康需求為起點，將 AI、機器視覺、眼動與多模態感測轉化為具臨床與生活場域價值的研究。" />
+    <div class="cards">
+      {researchDomains.map(r => <a class="card glass-card" href={`/research#${r.id}`}><div class="card-icon">{r.icon}</div><h3>{r.title}</h3><p>{r.items.slice(0,3).join('、')}</p><span class="link">深入了解 →</span></a>)}
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <SectionHead kicker="Featured Research" title="代表研究成果" description="聚焦可被驗證、可被實際使用、可持續擴充的智慧健康系統。" />
+    <div class="project-grid">{projects.slice(0,3).map(project => <ProjectCard project={project} />)}</div>
+    <div class="center-actions"><a class="btn btn-ghost glass-card" href="/results">查看全部研究成果</a></div>
+  </div></section>
+
+  <section class="section soft"><div class="container">
+    <SectionHead kicker="Impact" title="從實驗室走向健康照護" description="我們重視跨域合作與真實世界驗證，讓技術成為照護流程中的助力。" />
+    <div class="stats">
+      <div class="stat glass-card"><strong>4</strong><span>核心研究領域</span></div>
+      <div class="stat glass-card"><strong>5+</strong><span>智慧健康研究平台</span></div>
+      <div class="stat glass-card"><strong>3</strong><span>人才培育層級</span></div>
+      <div class="stat glass-card"><strong>∞</strong><span>跨領域合作可能</span></div>
+    </div>
+    <CtaBand />
+  </div></section>
+</BaseLayout>

@@ -1,0 +1,12 @@
+---
+const { project } = Astro.props;
+---
+<article class="project glass-card">
+  <div class="project-visual">{project.icon}</div>
+  <div class="project-body">
+    <span class="tag">研究平台</span>
+    <h3>{project.title}</h3>
+    <p>{project.desc}</p>
+    <div class="pill-list">{project.tags.map((tag: string) => <span class="pill">{tag}</span>)}</div>
+  </div>
+</article>

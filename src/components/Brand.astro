@@ -1,0 +1,16 @@
+---
+const { footer = false } = Astro.props;
+---
+<a class:list={['brand', { 'brand-footer': footer }]} href="/" aria-label="OSA Lab 首頁">
+  <span class="brand-mark" aria-hidden="true">
+    <svg viewBox="0 0 64 64">
+      <path d="M18 46c9-4 17-13 18-29 9 6 13 16 9 25-4 9-13 12-27 4Z" fill="currentColor" opacity=".9" />
+      <path d="M31 48c-1-13-4-23-13-31" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+      {!footer && <path d="M30 35c7 0 13-4 17-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />}
+    </svg>
+  </span>
+  <span>
+    <strong>OSA Lab</strong>
+    <small>{footer ? 'Smart Aging, Oral Health & Sleep Intelligence Laboratory' : '智慧高齡口腔睡眠實驗室'}</small>
+  </span>
+</a>

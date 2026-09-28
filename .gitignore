@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Astro
+dist/
+.astro/
+
+# Cloudflare
+.wrangler/
+.dev.vars
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { projects } from '../data/site';
+---
+<BaseLayout title="研究成果｜OSA Lab">
+  <PageHero title="研究成果" description="將研究方向轉化為具體平台、原型系統與可驗證成果。" />
+  <section class="section"><div class="container"><div class="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div><CtaBand /></div></section>
+</BaseLayout>
